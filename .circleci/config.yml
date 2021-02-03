@@ -110,6 +110,7 @@ commands:
   login-docker:
     steps:
       - run: echo "${DOCKER_PASS}" | docker login --username ${DOCKER_USER} --password-stdin
+      - run: docker login -u ${NGC_API_USERNAME} -p "${NGC_API_KEY}" nvcr.io
 
   install-protoc:
     steps:
